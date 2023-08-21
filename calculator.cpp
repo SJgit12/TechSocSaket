@@ -3,13 +3,14 @@ using namespace std;
 
 int main()
 {
-    int o,num1,num2,ans=0;
+    double o,num1,num2,ans=0;
     cout<<"this is a calculator     ";
-    cout<<"1. addition  2.subtraction   3.multiplication    4.division   5.exponent     6.Quit  ";
+    cout<<"1. addition  2.subtraction   3.multiplication    4.division   5.exponent     6.Trigonometry      7.Quit  ";
     cin >>o;
     
-    while (o!=6)
+    while (o!=7)
     {
+        if (o!=6){
     cout<<"enter the two numbers:";
     cout<<"the first number: ";
     cin>>num1;
@@ -63,7 +64,84 @@ int main()
         ans=expo;
         cout<<1<<" to the power of "<<num2 <<" is "<<ans<<endl;
     }
-    cout<<"1. addition  2.subtraction   3.multiplication    4.division   5.exponent     6.Quit";
+        }
+    else if(o==6){
+        double rad,deg,cos,tan;
+        cout<<"enter value in degrees "<<endl;
+        
+	cin>>deg;
+	rad=(deg*3.14159625)/180;
+	
+	double ans;
+	double sum1=0;
+	for(int i=1;i<=21;i+=4)
+	{
+		double res=1,pro=1;
+		for(int j=1;j<=i;j++)
+		{
+			res=res*rad;
+			pro*=j;
+			
+		}
+		res/=pro;
+		sum1+=res;	
+	}
+	
+	double sum2=0;
+	for(int i=3;i<=23;i+=4)
+	{
+		double res=1,pro=1;
+		for(int j=1;j<=i;j++)
+		{
+			res=res*rad;
+			pro*=j;
+			
+		}
+		res/=pro;
+		sum2+=res;	
+	}
+
+	ans=sum1-sum2;
+	double ansc;
+	double sum3=0;
+	for(int i=0;i<=20;i+=4)
+	{
+		double res=1,pro=1;
+		for(int j=1;j<=i;j++)
+		{
+			res=res*rad;
+			pro*=j;
+			
+		}
+		res/=pro;
+		sum3+=res;	
+	}
+	
+	double sum4=0;
+	for(int i=2;i<=22;i+=4)
+	{
+		double res=1,pro=1;
+		for(int j=1;j<=i;j++)
+		{
+			res=res*rad;
+			pro*=j;
+			
+		}
+		res/=pro;
+		sum4+=res;	
+	}
+
+	ansc=sum3-sum4;
+	cout<<"the value of sine is "<<ans<<endl;
+    cout<<"the value of cos is "<<ansc<<endl;
+    cout<<"the value of tan is "<<ans/ansc<<endl;
+	
+    }
+    else if(0!=7){
+        cout<<"error"<<endl;
+    
+    }
+    cout<<"1. addition  2.subtraction   3.multiplication    4.division   5.exponent     6.Trigonometry      7.Quit";
     cin >>o;
     }
     
